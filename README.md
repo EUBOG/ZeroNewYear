@@ -63,16 +63,16 @@ API предоставляет RESTful эндпоинты
 ## 📁 Структура проекта
 text
 new-year-wish-tree/
-├── app.py              # Основное Flask-приложение
-├── database.py         # Модели и работа с базой данных
-├── requirements.txt    # Зависимости Python
-├── README.md           # Эта документация
+├── app.py              "Основное Flask-приложение"
+├── database.py         "Модели и работа с базой данных"
+├── requirements.txt    "Зависимости Python"
+├── README.md           "Эта документация"
 ├── static/
-│   ├── style.css      # Стили приложения
-│   ├── script.js      # Фронтенд-логика
-│   └── tree.jpg       # Изображение ёлки
+│   ├── style.css      "Стили приложения"
+│   ├── script.js      "Фронтенд-логика"
+│   └── tree.jpg       "Изображение ёлки"
 └── templates/
-    └── index.html     # Главная страница
+    └── index.html     "Главная страница"
 ## 🔧 API эндпоинты
 GET /api/prediction/random
 Возвращает случайное предсказание из хлопушки.
