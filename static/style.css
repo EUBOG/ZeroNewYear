@@ -1,0 +1,347 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0c2e44 0%, #1a5f7a 100%);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Шапка */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #4dff91;
+    text-shadow: 0 0 10px rgba(77, 255, 145, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+.stats {
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+#wish-count {
+    font-weight: bold;
+    color: #ffcc00;
+    font-size: 1.3rem;
+}
+
+/* Основной контент */
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Карточки */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Форма */
+.form-group {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.char-counter {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Кнопки */
+.btn-primary, .btn-secondary, .btn-small {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff3366 0%, #ff9933 100%);
+    color: white;
+    width: 100%;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #3366ff 0%, #33ccff 100%);
+    color: white;
+    width: 100%;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.btn-primary:hover, .btn-secondary:hover, .btn-small:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ёлка */
+.tree-container {
+    position: relative;
+}
+
+.tree {
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tree-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/static/tree.jpg') center/contain no-repeat;
+    opacity: 0.8;
+}
+
+/* Контейнер для шариков */
+.balls-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Стили для шариков */
+.ball {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.ball:hover {
+    transform: scale(1.2);
+    z-index: 100;
+}
+
+/* Цвета шариков */
+.ball-red { background: radial-gradient(circle at 30% 30%, #ff3333, #cc0000); }
+.ball-blue { background: radial-gradient(circle at 30% 30%, #3399ff, #0066cc); }
+.ball-gold { background: radial-gradient(circle at 30% 30%, #ffcc00, #cc9900); }
+.ball-silver { background: radial-gradient(circle at 30% 30%, #cccccc, #999999); }
+.ball-green { background: radial-gradient(circle at 30% 30%, #33cc33, #009900); }
+.ball-purple { background: radial-gradient(circle at 30% 30%, #cc33ff, #9900cc); }
+
+/* Список пожеланий */
+.wishes-list {
+    margin-top: 20px;
+}
+
+.wishes-scroll {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding-right: 10px;
+}
+
+.wish-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #4dff91;
+    font-size: 0.95rem;
+}
+
+.wish-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Предсказания */
+.prediction-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.prediction-content {
+    margin-bottom: 15px;
+}
+
+.color-badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Сообщения */
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    background: rgba(77, 255, 145, 0.2);
+    border: 1px solid #4dff91;
+    color: #4dff91;
+}
+
+.message.error {
+    background: rgba(255, 77, 77, 0.2);
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.small {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Анимация снега */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.snowflake {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Анимация добавления шарика */
+@keyframes addBall {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.new-ball {
+    animation: addBall 0.5s ease-out;
+}

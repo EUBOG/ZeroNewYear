@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 Волшебная Ёлка Пожеланий</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="snowflakes"></div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tree"></i> Волшебная Ёлка Пожеланий</h1>
+            <p class="subtitle">Загадай желание и повесь шарик на нашу виртуальную ёлку!</p>
+            <div class="stats">
+                Количество желаний на ёлке: <span id="wish-count">0</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- Левая колонка: Форма и предсказания -->
+            <div class="left-column">
+                <!-- Форма добавления пожелания -->
+                <div class="card">
+                    <h2><i class="fas fa-star"></i> Загадать желание</h2>
+                    <div class="form-group">
+                        <textarea id="wish-text"
+                                  placeholder="Напишите ваше новогоднее пожелание или мечту... (макс. 200 символов)"
+                                  maxlength="200"></textarea>
+                        <div class="char-counter">
+                            <span id="char-count">0</span>/200
+                        </div>
+                    </div>
+                    <button id="add-wish-btn" class="btn-primary">
+                        <i class="fas fa-plus-circle"></i> Повесить шарик на ёлку
+                    </button>
+                    <div id="message" class="message"></div>
+                </div>
+
+                <!-- Хлопушка с предсказанием -->
+                <div class="card">
+                    <h2><i class="fas fa-firework"></i> Новогодняя хлопушка</h2>
+                    <p>Дёрните за верёвочку и узнайте, что ждёт вас в новом году!</p>
+                    <button id="pull-cracker-btn" class="btn-secondary">
+                        <i class="fas fa-gift"></i> Дёрнуть за хлопушку!
+                    </button>
+                    <div id="prediction-box" class="prediction-box hidden">
+                        <div class="prediction-content">
+                            <h3>Ваше предсказание:</h3>
+                            <p id="prediction-text"></p>
+                            <div id="prediction-color" class="color-badge"></div>
+                        </div>
+                        <button id="close-prediction" class="btn-small">
+                            <i class="fas fa-times"></i> Закрыть
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Правая колонка: Ёлка с шариками -->
+            <div class="right-column">
+                <div class="card tree-container">
+                    <h2><i class="fas fa-tree"></i> Наша ёлка</h2>
+
+                    <!-- Контейнер для ёлки -->
+                    <div class="tree">
+                        <!-- Ёлка (фоновая картинка) -->
+                        <div class="tree-image" style="background: url('/static/tree.jpg') center/contain no-repeat; border: 2px solid blue;"></div>
+
+                        <!-- Контейнер для шариков -->
+                        <div id="balls-container" class="balls-container">
+                            <!-- Шарики будут добавляться здесь через JS -->
+                        </div>
+                    </div>
+
+                    <!-- Список пожеланий -->
+                    <div class="wishes-list">
+                        <h3>Последние пожелания:</h3>
+                        <div id="wishes-list" class="wishes-scroll">
+                            <!-- Пожелания будут добавляться здесь -->
+                        </div>
+                        <button id="refresh-wishes" class="btn-small">
+                            <i class="fas fa-sync-alt"></i> Обновить
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>✨ Все пожелания анонимны. Присоединяйтесь к волшебству! ✨</p>
+            <p class="small">Сделано с ❤️ на Python + Flask для Зерокодера</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

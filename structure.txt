@@ -1,0 +1,10 @@
+newyear-tree/
+├── app.py              # Основное Flask-приложение
+├── requirements.txt    # Зависимости
+├── database.py         # Работа с базой данных
+├── static/
+│   ├── style.css      # Стили
+│   ├── script.js      # Фронтенд-логика
+│   └── images/        # Картинки (ёлка, шарики)
+└── templates/
+    └── index.html     # Главная страница
