@@ -1,0 +1,26 @@
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# PyCharm
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+
+# Логи и БД
+*.log
+*.sqlite3
+
+# Статические файлы (если собираются)
+staticfiles/
+mediafiles/
